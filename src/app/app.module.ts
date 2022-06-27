@@ -7,6 +7,7 @@ import { HeadComponent } from './components/head/head.component';
 import { DaysHolderComponent } from './components/days-holder/days-holder.component';
 import { LabelsSectionComponent } from './components/labels-section/labels-section.component';
 import { CardsComponent } from './components/cards/cards.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CardsComponent } from './components/cards/cards.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
