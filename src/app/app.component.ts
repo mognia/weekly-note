@@ -65,8 +65,8 @@ export class AppComponent implements OnInit {
   }
   addNoteToLabel() {
     // in this function we find each label's notes and add to their label's object
-    for (let i = 0; i < this.labels.length; i++) {
-      for (let j = 0; j < this.notes.length; j++) {
+    for (let i = 0; i < this.labels?.length; i++) {
+      for (let j = 0; j < this.notes?.length; j++) {
         if (this.notes[j].labels.includes(this.labels[i].id)){
           if (!this.labels[i].notes) {
             this.labels[i].notes = []
