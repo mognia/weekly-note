@@ -1,5 +1,5 @@
 <div class="flex-col">
   <ng-container *ngIf="labels">
-  <app-labels-section [text]="label.text" [id]="label.id" *ngFor="let label of labels"></app-labels-section>
+  <app-labels-section [notes]="label.notes" [text]="label.text" [id]="label.id" *ngFor="let label of labels"></app-labels-section>
   </ng-container>
 </div>

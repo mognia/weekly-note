@@ -8,6 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class LabelsSectionComponent implements OnInit {
   @Input() text: string | undefined
   @Input() id: number | undefined
+  @Input() notes: any[] | undefined
   constructor() { }
 
   ngOnInit(): void {

@@ -17,7 +17,8 @@ interface Note {
 })
 export class AppComponent implements OnInit {
   labels: any | undefined;
-  notes: any[] | undefined
+  notes: any[] = []
+  days : number[] = []
   constructor(public apiService: ApiService) {
   }
 
@@ -38,6 +39,8 @@ export class AppComponent implements OnInit {
     this.apiService.getNotes().subscribe((data: any) => {
       this.notes = data['notes'];
       this.beautifyNotes()
+      this.addNoteToLabel()
+    console.log(this.days)
     });
   }
 
@@ -60,5 +63,19 @@ export class AppComponent implements OnInit {
     const month = months[a.getMonth()]
     const date = a.getDate();
     return `${date}/${month}`;
+  }
+  addNoteToLabel() {
+    // in this function we find each label's notes and add to their label's object
+    for (let i = 0; i < this.labels.length; i++) {
+      for (let j = 0; j < this.notes.length; j++) {
+        if (this.notes[j].labels.includes(this.labels[i].id)){
+          if (!this.labels[i].notes) {
+            this.labels[i].notes = []
+          }
+          this.labels[i].notes.push(this.notes[j])
+        }
+      }
+    }
+    console.log(this.labels)
   }
 }
