@@ -9,7 +9,7 @@ import { LabelsSectionComponent } from './components/labels-section/labels-secti
 import { CardsComponent } from './components/cards/cards.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatGridListModule} from "@angular/material/grid-list";
-import {ApiService} from "./services/api.service";
+import {ApiService} from "./services/api/api.service";
 import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({

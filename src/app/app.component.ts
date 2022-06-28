@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ApiService} from "./services/api.service";
+import {ApiService} from "./services/api/api.service";
 
 interface Note {
   id: number;
@@ -40,7 +40,6 @@ export class AppComponent implements OnInit {
       this.notes = data['notes'];
       this.beautifyNotes()
       this.addNoteToLabel()
-    console.log(this.days)
     });
   }
 
@@ -76,6 +75,5 @@ export class AppComponent implements OnInit {
         }
       }
     }
-    console.log(this.labels)
   }
 }
