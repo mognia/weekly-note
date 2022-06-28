@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {ApiService} from "./services/api/api.service";
 import {HttpClientModule} from "@angular/common/http";
+import { CalenderComponent } from './components/calender/calender.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {HttpClientModule} from "@angular/common/http";
     HeadComponent,
     DaysHolderComponent,
     LabelsSectionComponent,
-    CardsComponent
+    CardsComponent,
+    CalenderComponent
   ],
   imports: [
     BrowserModule,
