@@ -1,7 +1,7 @@
 <mat-grid-list cols="5" rowHeight="2:1">
-  <mat-grid-tile>1</mat-grid-tile>
-  <mat-grid-tile>2</mat-grid-tile>
-  <mat-grid-tile>3</mat-grid-tile>
-  <mat-grid-tile>4</mat-grid-tile>
-  <mat-grid-tile>5</mat-grid-tile>
+  <mat-grid-tile *ngFor="let day of days">
+    <div *ngFor="let note on day.notes |k">
+      {{note.title}}
+    </div>
+  </mat-grid-tile>
 </mat-grid-list>

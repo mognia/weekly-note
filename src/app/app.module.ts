@@ -12,6 +12,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {ApiService} from "./services/api/api.service";
 import {HttpClientModule} from "@angular/common/http";
 import { CalenderComponent } from './components/calender/calender.component';
+import {CalenderService} from "./services/calender/calender.service";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CalenderComponent } from './components/calender/calender.component';
     MatGridListModule
   ],
   providers: [
-    ApiService
+    ApiService,
+    CalenderService
   ],
   bootstrap: [AppComponent]
 })

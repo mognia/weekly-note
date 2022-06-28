@@ -1,6 +1,7 @@
 <div class="flex-col">
   <app-head></app-head>
-  <ng-container *ngIf="labels">
+<!-- wait for labels array get ready and append each not to it's label -->
+  <ng-container *ngIf="labels && isNoteLabelsAdded">
   <app-labels-section [notes]="label.notes" [text]="label.text" [id]="label.id" *ngFor="let label of labels"></app-labels-section>
   </ng-container>
 </div>

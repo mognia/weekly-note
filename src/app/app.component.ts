@@ -19,12 +19,13 @@ export class AppComponent implements OnInit {
   labels: any | undefined;
   notes: any[] = []
   days : number[] = []
+  isNoteLabelsAdded: boolean = false;
   constructor(public apiService: ApiService) {
   }
 
-  ngOnInit(): void {
+ async ngOnInit(): Promise<void> {
     this.getLabels()
-    this.getNotes()
+   await this.getNotes()
   }
 
   getLabels() {
@@ -75,5 +76,6 @@ export class AppComponent implements OnInit {
         }
       }
     }
+    this.isNoteLabelsAdded = true;
   }
 }

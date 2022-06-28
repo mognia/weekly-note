@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {CalenderService} from "../../services/calender/calender.service";
 
 @Component({
   selector: 'app-calender',
@@ -9,7 +10,7 @@ export class CalenderComponent implements OnInit {
 
   days: number[] = []
 
-  constructor() {
+  constructor(public calenderService: CalenderService) {
   }
 
   ngOnInit(): void {
@@ -29,6 +30,7 @@ export class CalenderComponent implements OnInit {
       }
       this.days.reverse()
     }
+    this.calenderService.setDays(this.days)
   }
 
   nextWeek() {
