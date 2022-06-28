@@ -8,6 +8,9 @@ import { DaysHolderComponent } from './components/days-holder/days-holder.compon
 import { LabelsSectionComponent } from './components/labels-section/labels-section.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatGridListModule} from "@angular/material/grid-list";
+import {ApiService} from "./services/api.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,9 +23,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatGridListModule
   ],
-  providers: [],
+  providers: [
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
