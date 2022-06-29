@@ -1,6 +1,6 @@
 <mat-grid-list cols="5" rowHeight="2:1">
   <mat-grid-tile *ngFor="let day of days">
-    <div *ngFor="let note on day.notes |k">
+    <div *ngFor="let note of day['notes']">
       {{note.title}}
     </div>
   </mat-grid-tile>

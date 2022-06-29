@@ -33,15 +33,10 @@ export class CalenderComponent implements OnInit {
     this.calenderService.setDays(this.days)
   }
 
-  nextWeek() {
-    let startOf:number | undefined = this.days.pop();
+  updateWeek(isPrevious: boolean) {
+    let startOf:number | undefined = isPrevious ? this.days.shift() : this.days.pop();
     this.days = [];
-    this.createDays(startOf,false)
+    this.createDays(startOf,isPrevious)
   }
 
-  preWeek() {
-    let startOf:number | undefined = this.days.shift();
-    this.days = [];
-    this.createDays(startOf,true)
-  }
 }
