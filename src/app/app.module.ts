@@ -13,6 +13,7 @@ import {ApiService} from "./services/api/api.service";
 import {HttpClientModule} from "@angular/common/http";
 import { CalenderComponent } from './components/calender/calender.component';
 import {CalenderService} from "./services/calender/calender.service";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {CalenderService} from "./services/calender/calender.service";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    MatCardModule,
     BrowserAnimationsModule,
     MatGridListModule
   ],

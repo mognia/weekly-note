@@ -2,6 +2,8 @@
   <app-head></app-head>
 <!-- wait for labels array get ready and append each not to it's label -->
   <ng-container *ngIf="labels && isNoteLabelsAdded">
+    <div class="container">
   <app-labels-section [notes]="label.notes" [text]="label.text" [id]="label.id" *ngFor="let label of labels"></app-labels-section>
+    </div>
   </ng-container>
 </div>

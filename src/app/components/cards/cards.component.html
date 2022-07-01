@@ -1,1 +1,10 @@
-<p>cards works!</p>
+<mat-card class="example-card">
+  <mat-card-title>{{note?.id}}  {{note?.title}}</mat-card-title>
+  <mat-card-content>
+    <p>{{note?.summary}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>

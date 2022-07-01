@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from "./services/api/api.service";
+import {concatMap, switchMap} from "rxjs/operators";
 
-interface Note {
+export interface Note {
   id: number;
   title: string;
   summary?: string;
@@ -25,13 +26,13 @@ export class AppComponent implements OnInit {
 
  async ngOnInit(): Promise<void> {
     this.getLabels()
-   await this.getNotes()
   }
 
   getLabels() {
     // retrieve all labels
     this.apiService.getLabels().subscribe((data) => {
-      this.labels = data
+      this.labels = data;
+      this.getNotes();
     });
   }
 
@@ -76,6 +77,6 @@ export class AppComponent implements OnInit {
         }
       }
     }
-    this.isNoteLabelsAdded = true;
+   return   this.isNoteLabelsAdded = true;
   }
 }

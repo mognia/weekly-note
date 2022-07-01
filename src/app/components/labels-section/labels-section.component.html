@@ -1,7 +1,7 @@
 <mat-grid-list cols="5" rowHeight="2:1">
   <mat-grid-tile *ngFor="let day of days">
-    <div *ngFor="let note of day['notes']">
-      {{note.title}}
+    <div class="cards-holder" *ngFor="let note of day['notes']; let i = index" [style.z-index]="i">
+      <app-cards [note]="note"></app-cards>
     </div>
   </mat-grid-tile>
 </mat-grid-list>
