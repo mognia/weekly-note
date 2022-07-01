@@ -7,8 +7,8 @@ export interface Note {
   title: string;
   summary?: string;
   labels: number[];
-  startDate: number | string;
-  endDate: number | string;
+  startDate:  string;
+  endDate:  string;
 }
 
 @Component({

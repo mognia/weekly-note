@@ -20,4 +20,11 @@ export class CardDialogComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
+  editDay(e:any ,isStartDay:boolean) {
+    if (isStartDay) {
+      this.data.note.startDate = `${e?.target.value}/1`
+    }else {
+      this.data.note.endDate = `${e?.target.value}/1`
+    }
+  }
 }
