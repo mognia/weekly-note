@@ -14,6 +14,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { CalenderComponent } from './components/calender/calender.component';
 import {CalenderService} from "./services/calender/calender.service";
 import {MatCardModule} from "@angular/material/card";
+import {MatTabsModule} from "@angular/material/tabs";
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {MatCardModule} from "@angular/material/card";
     AppRoutingModule,
     HttpClientModule,
     MatCardModule,
+    MatTabsModule,
     BrowserAnimationsModule,
     MatGridListModule
   ],

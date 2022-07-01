@@ -1,9 +1,12 @@
 .day-box {
   position: relative;
 }
-.cards-holder {
-  position: absolute;
+.tab-box {
+  width: 100%;
 }
 .mat-grid-tile {
   border: 1px solid;
+}
+::ng-deep.mat-grid-tile-content{
+  align-items: flex-start!important;
 }
