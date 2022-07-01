@@ -4,9 +4,32 @@
 .tab-box {
   width: 100%;
 }
+.mat-grid-list{
+  width: 90%;
+}
 .mat-grid-tile {
   border: 1px solid;
 }
 ::ng-deep.mat-grid-tile-content{
   align-items: flex-start!important;
+}
+.label-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.label-holder {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  color: #fff;
+}
+.front-bg {
+  background-color: green;
+}.back-bg {
+  background-color: red;
+}.security-bg {
+  background-color: blue;
 }

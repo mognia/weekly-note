@@ -1,11 +1,18 @@
-<mat-grid-list cols="5" rowHeight="2:1">
-  <mat-grid-tile *ngFor="let day of days">
-    <div class="tab-box">
-      <mat-tab-group >
-        <mat-tab label="Note-{{note.title}}" *ngFor="let note of day['notes']; let i = index">
-      <app-cards [note]="note"></app-cards>
-        </mat-tab>
-      </mat-tab-group>
-    </div>
-  </mat-grid-tile>
-</mat-grid-list>
+<div class="label-container">
+  <div class="label-holder" [ngClass]="(id === 1)? 'front-bg': (id === 2)? 'back-bg' : 'security-bg'">
+    <p>
+      {{text}}
+    </p>
+  </div>
+  <mat-grid-list cols="5" rowHeight="16rem">
+    <mat-grid-tile *ngFor="let day of days">
+      <div class="tab-box">
+        <mat-tab-group>
+          <mat-tab label="Note-{{note.title}}" *ngFor="let note of day['notes']; let i = index">
+            <app-cards [note]="note"></app-cards>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
