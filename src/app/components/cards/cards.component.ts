@@ -1,14 +1,18 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Note} from "../../app.component";
+import {MatDialog} from "@angular/material/dialog";
+import {CardDialogComponent} from "./card-dialog/card-dialog.component";
+
 @Component({
   selector: 'app-cards',
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.scss']
 })
+
 export class CardsComponent implements OnInit {
 @Input() note: Note | undefined;
   duration : number=1;
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.calculateDuration()
@@ -19,5 +23,15 @@ export class CardsComponent implements OnInit {
     if (endDay> startDay) {
       this.duration = endDay - startDay
     }
+  }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(CardDialogComponent, {
+      data: {note: this.note},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed' , result);
+      // this.animal = result;
+    });
   }
 }

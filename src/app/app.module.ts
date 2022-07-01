@@ -15,6 +15,8 @@ import { CalenderComponent } from './components/calender/calender.component';
 import {CalenderService} from "./services/calender/calender.service";
 import {MatCardModule} from "@angular/material/card";
 import {MatTabsModule} from "@angular/material/tabs";
+import { CardDialogComponent } from './components/cards/card-dialog/card-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import {MatTabsModule} from "@angular/material/tabs";
     DaysHolderComponent,
     LabelsSectionComponent,
     CardsComponent,
-    CalenderComponent
+    CalenderComponent,
+    CardDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import {MatTabsModule} from "@angular/material/tabs";
     MatCardModule,
     MatTabsModule,
     BrowserAnimationsModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule
   ],
   providers: [
     ApiService,

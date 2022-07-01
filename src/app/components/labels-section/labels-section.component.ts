@@ -28,9 +28,7 @@ export class LabelsSectionComponent implements OnInit, OnDestroy {
       for (const day of data) {
         this.days.push({day: day})
       }
-      console.log(this.notes);
       this.setDayNote();
-      console.log(this.days)
     });
   }
 
