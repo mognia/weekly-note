@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Note} from "../../app.component";
 import {MatDialog} from "@angular/material/dialog";
 import {CardDialogComponent} from "./card-dialog/card-dialog.component";
+import {ApiService} from "../../services/api/api.service";
 
 @Component({
   selector: 'app-cards',
@@ -12,7 +13,9 @@ import {CardDialogComponent} from "./card-dialog/card-dialog.component";
 export class CardsComponent implements OnInit {
 @Input() note: Note | undefined;
   duration : number=1;
-  constructor(public dialog: MatDialog) { }
+  constructor(
+    public dialog: MatDialog,
+    public apiService:ApiService) { }
 
   ngOnInit(): void {
     this.calculateDuration()
@@ -29,9 +32,10 @@ export class CardsComponent implements OnInit {
       data: {note: this.note},
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed' , result);
-      // this.animal = result;
+    dialogRef.afterClosed().subscribe((result:Note) => {
+      this.apiService.updateNote(result.id,result).subscribe(data => {
+        console.log(data)
+      })
     });
   }
 }

@@ -1,15 +1,16 @@
 <ng-container *ngIf="note">
 
-  <h1 mat-dialog-title>{{note.id}}
+  <h1 mat-dialog-title>
     <mat-form-field appearance="fill">
       <mat-label>Title</mat-label>
       <input matInput [(ngModel)]="note.title">
     </mat-form-field>
   </h1>
-  <div mat-dialog-content>
+  <div mat-dialog-content >
+  <div class="flex-col d-flex">
     <mat-form-field appearance="fill">
       <mat-label>Description</mat-label>
-      <input matInput [(ngModel)]="note.summary">
+      <textarea matInput [(ngModel)]="note.summary"></textarea>
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Start Day</mat-label>
@@ -22,8 +23,9 @@
       <span matSuffix>/1</span>
     </mat-form-field>
   </div>
-  <div mat-dialog-actions>
+  </div>
+  <div mat-dialog-actions class="jus-center">
     <button mat-button (click)="onNoClick()">No Thanks</button>
-    <button mat-button [mat-dialog-close]="note" cdkFocusInitial>Ok</button>
+    <button mat-button [mat-dialog-close]="note" cdkFocusInitial>Save</button>
   </div>
 </ng-container>

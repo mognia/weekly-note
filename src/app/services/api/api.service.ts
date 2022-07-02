@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {Note} from "../../app.component";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class ApiService {
   getLabels() {
     return this.httpClient.get(`${this.api}/noteLabels`)
   }
-  uploadNote(id:number) {
-
+  updateNote(id:number, note:Note) {
+    return this.httpClient.put(`${this.api}/notes/${id}`,note)
   }
 }
