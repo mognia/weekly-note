@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="days-holder">
+  <div class="divider"></div>
+<mat-grid-list cols="5" rowHeight="3rem">
+  <mat-grid-tile *ngFor="let day of days">
+    <div class="tab-box">
+      <button mat-stroked-button color="primary">{{day}}/1</button>
+
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+  </div>
+</div>

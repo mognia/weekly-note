@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DaysHolderComponent } from './days-holder.component';
+import { DaysSectionComponent } from './days-section.component';
 
-describe('DaysHolderComponent', () => {
-  let component: DaysHolderComponent;
-  let fixture: ComponentFixture<DaysHolderComponent>;
+describe('DaysSectionComponent', () => {
+  let component: DaysSectionComponent;
+  let fixture: ComponentFixture<DaysSectionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DaysHolderComponent ]
+      declarations: [ DaysSectionComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DaysHolderComponent);
+    fixture = TestBed.createComponent(DaysSectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
