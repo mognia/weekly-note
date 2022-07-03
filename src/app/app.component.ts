@@ -93,7 +93,7 @@ export class AppComponent implements OnInit {
    return   this.isNoteLabelsAdded = true;
   }
   filterSections(id:number) {
-    this.labels = this.labels.filter((label:labelsArr) => {
+    this.labels = this.labels?.filter((label:labelsArr) => {
       if (id) {
       label.hide = label.id !== id;
       }else {

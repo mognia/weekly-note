@@ -1,2 +1,9 @@
-<button (click)="updateWeek(false)">Next</button>
-<button (click)="updateWeek(true)">Pre</button>
+<div class="btn-box al-center flex-row">
+  <button [disabled]="days[0] === 1" (click)="updateWeek(true)" mat-fab color="accent">
+    <mat-icon>arrow_back_ios</mat-icon>
+  </button>
+  <div>Calender: week1</div>
+  <button [disabled]="days[4] === 30" (click)="updateWeek(false)" mat-fab color="primary">
+    <mat-icon>arrow_forward_ios</mat-icon>
+  </button>
+</div>

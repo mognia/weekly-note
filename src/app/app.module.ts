@@ -24,6 +24,8 @@ import { DaysSectionComponent } from './components/days-section/days-section.com
 import {ResponsiveService} from "./services/responsive/responsive.service";
 import { SectionFilterComponent } from './components/section-filter/section-filter.component';
 import {MatSelectModule} from "@angular/material/select";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -49,7 +51,8 @@ import {MatSelectModule} from "@angular/material/select";
     MatInputModule,
     FormsModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule
   ],
   providers: [
     ApiService,
