@@ -22,6 +22,8 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import { DaysSectionComponent } from './components/days-section/days-section.component';
 import {ResponsiveService} from "./services/responsive/responsive.service";
+import { SectionFilterComponent } from './components/section-filter/section-filter.component';
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import {ResponsiveService} from "./services/responsive/responsive.service";
     CardsComponent,
     CalenderComponent,
     CardDialogComponent,
-    DaysSectionComponent
+    DaysSectionComponent,
+    SectionFilterComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import {ResponsiveService} from "./services/responsive/responsive.service";
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule
   ],
   providers: [
     ApiService,

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from "./services/api/api.service";
 import {concatMap, switchMap} from "rxjs/operators";
 import {ResponsiveService} from "./services/responsive/responsive.service";
+import {SectionFilterService} from "./services/sectionFIlter/section-filter.service";
 
 export interface Note {
   id: number;
@@ -11,24 +12,33 @@ export interface Note {
   startDate:  string;
   endDate:  string;
 }
-
+export interface labelsArr {
+  id: number;
+  text: string;
+  notes:Note[];
+  hide:boolean
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  labels: any | undefined;
+  labels: labelsArr | any ;
   notes: any[] = []
   days : number[] = []
   isNoteLabelsAdded: boolean = false;
   constructor(
-    public apiService: ApiService,public responsiveService: ResponsiveService) {
+    public apiService: ApiService,
+    public responsiveService: ResponsiveService,
+    public sectionFilter : SectionFilterService) {
   }
 
- async ngOnInit(): Promise<void> {
-    // this.responsiveService.resize()
-    this.getLabels()
+  ngOnInit() {
+    this.getLabels();
+    this.sectionFilter.getFilter().subscribe(id => {
+        this.filterSections(id)
+    })
   }
 
   getLabels() {
@@ -81,5 +91,15 @@ export class AppComponent implements OnInit {
       }
     }
    return   this.isNoteLabelsAdded = true;
+  }
+  filterSections(id:number) {
+    this.labels = this.labels.filter((label:labelsArr) => {
+      if (id) {
+      label.hide = label.id !== id;
+      }else {
+        label.hide = false;
+      }
+      return this.labels
+    });
   }
 }

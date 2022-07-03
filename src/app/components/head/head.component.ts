@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ResponsiveService} from "../../services/responsive/responsive.service";
 
 @Component({
@@ -8,7 +8,7 @@ import {ResponsiveService} from "../../services/responsive/responsive.service";
 })
 export class HeadComponent implements OnInit {
    isResponsive: boolean = false;
-
+    @Input() labels:any;
   constructor(public responsiveService: ResponsiveService) { }
 
   ngOnInit(): void {
