@@ -19,7 +19,8 @@ export class LabelsSectionComponent implements OnInit, OnDestroy {
   @Input() notes: any[] | undefined;
   days: dayObj[] = [];
   getDaysSubc: Subscription | undefined;
-
+  isResponsive:boolean = false
+   cols: number = 5;
   constructor(
     public calenderService: CalenderService,
     public responsiveService: ResponsiveService) {
@@ -27,8 +28,13 @@ export class LabelsSectionComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.responsiveService.resizeObservable$.subscribe(data => {
-      console.log(data)
-    })
+      this.isResponsive = data < 770;
+      if (!this.isResponsive) {
+        this.cols = 5
+      }else {
+        this.cols = 1
+      }
+    });
     this.getDaysSubc = this.calenderService.getDays().subscribe((data) => {
       this.days = [];
       for (const day of data) {

@@ -4,7 +4,9 @@
       {{text}}
     </p>
   </div>
-  <mat-grid-list cols="1" rowHeight="16rem">
+  <div class="tile-wrapper">
+    <app-days-section *ngIf="isResponsive"></app-days-section>
+  <mat-grid-list [cols]="cols" rowHeight="16rem">
     <mat-grid-tile *ngFor="let day of days">
       <div class="tab-box">
         <mat-tab-group>
@@ -15,4 +17,5 @@
       </div>
     </mat-grid-tile>
   </mat-grid-list>
+  </div>
 </div>

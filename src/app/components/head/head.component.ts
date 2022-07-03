@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ResponsiveService} from "../../services/responsive/responsive.service";
 
 @Component({
   selector: 'app-head',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./head.component.scss']
 })
 export class HeadComponent implements OnInit {
+   isResponsive: boolean = false;
 
-  constructor() { }
+  constructor(public responsiveService: ResponsiveService) { }
 
   ngOnInit(): void {
+    this.responsiveService.resizeObservable$.subscribe(data => {
+      this.isResponsive = data < 770;
+    });
   }
 
 }
