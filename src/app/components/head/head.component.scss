@@ -1,0 +1,20 @@
+.header {
+  background: #0c2431;
+  align-items: center;
+  color: #e1dad2;
+
+  .mat-form-field-label, .mat-select-arrow {
+    color: #e1dad2;
+  }
+
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: #194a50;
+  }
+
+  .mat-form-field-appearance-fill .mat-form-field-underline::before {
+    background-color: #e1dad2;
+  }
+  .mat-form-field-wrapper {
+    //padding-bottom: 0;
+  }
+}

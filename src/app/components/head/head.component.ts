@@ -1,9 +1,10 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {ResponsiveService} from "../../services/responsive/responsive.service";
 
 @Component({
   selector: 'app-head',
   templateUrl: './head.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./head.component.scss']
 })
 export class HeadComponent implements OnInit {
