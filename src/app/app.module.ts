@@ -21,6 +21,7 @@ import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import { DaysSectionComponent } from './components/days-section/days-section.component';
+import {ResponsiveService} from "./services/responsive/responsive.service";
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { DaysSectionComponent } from './components/days-section/days-section.com
   ],
   providers: [
     ApiService,
-    CalenderService
+    CalenderService,
+    ResponsiveService
   ],
   bootstrap: [AppComponent]
 })

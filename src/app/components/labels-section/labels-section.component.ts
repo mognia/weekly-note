@@ -1,6 +1,7 @@
 import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
 import {CalenderService} from "../../services/calender/calender.service";
 import {Subscription} from "rxjs";
+import {ResponsiveService} from "../../services/responsive/responsive.service";
 
 interface dayObj {
   day: number;
@@ -19,10 +20,15 @@ export class LabelsSectionComponent implements OnInit, OnDestroy {
   days: dayObj[] = [];
   getDaysSubc: Subscription | undefined;
 
-  constructor(public calenderService: CalenderService) {
+  constructor(
+    public calenderService: CalenderService,
+    public responsiveService: ResponsiveService) {
   }
 
   ngOnInit(): void {
+    this.responsiveService.resizeObservable$.subscribe(data => {
+      console.log(data)
+    })
     this.getDaysSubc = this.calenderService.getDays().subscribe((data) => {
       this.days = [];
       for (const day of data) {

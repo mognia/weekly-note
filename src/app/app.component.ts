@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from "./services/api/api.service";
 import {concatMap, switchMap} from "rxjs/operators";
+import {ResponsiveService} from "./services/responsive/responsive.service";
 
 export interface Note {
   id: number;
@@ -21,10 +22,12 @@ export class AppComponent implements OnInit {
   notes: any[] = []
   days : number[] = []
   isNoteLabelsAdded: boolean = false;
-  constructor(public apiService: ApiService) {
+  constructor(
+    public apiService: ApiService,public responsiveService: ResponsiveService) {
   }
 
  async ngOnInit(): Promise<void> {
+    // this.responsiveService.resize()
     this.getLabels()
   }
 

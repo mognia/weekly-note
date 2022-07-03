@@ -33,3 +33,14 @@
 }.security-bg {
   background-color: blue;
 }
+@media (max-width:961px)  {
+  .label-holder {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  .label-container {
+    flex-direction: column;
+  }
+}
