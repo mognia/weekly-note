@@ -1,5 +1,18 @@
 <mat-card (click)="openDialog()" class="example-card">
-  <mat-card-title>{{note?.id}}  {{note?.title}}</mat-card-title>
+  <mat-card-title>
+    <div class="d-flex jus-between head">
+      <div>
+        {{note?.id}}  {{note?.title}}
+      </div>
+
+      <div class="d-flex jus-around">
+        <div class="chips" [ngClass]="id === 1 ? 'chips-frontEnd' : id === 2 ? 'chips-backEnd' : 'chips-security'"
+             [matTooltip]="id === 1 ? 'Front End' : id === 2 ? 'Back End' : 'Security'"
+             matTooltipPosition="above"
+             *ngFor="let id of note?.labels"></div>
+      </div>
+    </div>
+  </mat-card-title>
   <mat-card-content>
     <p>{{note?.summary}}</p>
     <p>Duration: {{duration}} Days</p>

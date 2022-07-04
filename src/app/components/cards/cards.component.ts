@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {Note} from "../../app.component";
 import {MatDialog} from "@angular/material/dialog";
 import {CardDialogComponent} from "./card-dialog/card-dialog.component";
@@ -6,6 +6,7 @@ import {ApiService} from "../../services/api/api.service";
 
 @Component({
   selector: 'app-cards',
+  encapsulation: ViewEncapsulation.None,
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.scss']
 })
@@ -18,6 +19,7 @@ export class CardsComponent implements OnInit {
     public apiService:ApiService) { }
 
   ngOnInit(): void {
+    console.log(this.note)
     this.calculateDuration()
   }
   calculateDuration(){

@@ -1,3 +1,4 @@
+@import "src/styles";
 .day-box {
   position: relative;
 }
@@ -27,11 +28,11 @@
   color: #fff;
 }
 .front-bg {
-  background-color: #316879;
+  background-color: $frontEndColor;
 }.back-bg {
-  background-color: #f47a60;
+  background-color: $backEndColor;
 }.security-bg {
-  background-color: #7fe7dc;
+  background-color: $securityColor;
 }
 .tile-wrapper {
   width: 100%;

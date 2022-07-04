@@ -2,7 +2,7 @@
   <button [disabled]="days[0] === 1" (click)="updateWeek(true)" mat-fab color="primary">
     <mat-icon>arrow_back_ios</mat-icon>
   </button>
-  <div class="flex-row d-flex">
+  <div class="flex-row d-flex calender-title">
     <span *ngIf="!isResponsive">Calender: </span>
     <span>
     week {{week}}
