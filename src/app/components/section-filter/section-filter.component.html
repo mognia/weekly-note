@@ -1,7 +1,9 @@
 <mat-form-field *ngIf="labels" appearance="fill">
-  <mat-label>All</mat-label>
+  <mat-label>Filter Labels</mat-label>
+  <div class="select-holder">
   <mat-select>
     <mat-option (click)="selectSection(section.id)" *ngFor="let section of labels" [value]="section.id">{{section.text}}</mat-option>
     <mat-option (click)="selectSection(0)" value="0">All</mat-option>
   </mat-select>
+  </div>
 </mat-form-field>

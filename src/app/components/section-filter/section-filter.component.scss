@@ -1,3 +1,15 @@
 mat-form-field {
   padding: 1rem 0px 0 1rem;
 }
+.select-holder {
+.mat-select-value {
+  color: rgb(255 255 255 / 87%);
+}
+}
+@media (max-width:961px)  {
+
+    .mat-form-field-wrapper {
+      max-width: 7rem;
+    }
+
+}

@@ -1,9 +1,10 @@
-import {Component, Input, OnInit, Output,EventEmitter} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter, ViewEncapsulation} from '@angular/core';
 import {SectionFilterService} from "../../services/sectionFIlter/section-filter.service";
 import {ApiService} from "../../services/api/api.service";
 
 @Component({
   selector: 'app-section-filter',
+  encapsulation: ViewEncapsulation.None,
   templateUrl: './section-filter.component.html',
   styleUrls: ['./section-filter.component.scss']
 })

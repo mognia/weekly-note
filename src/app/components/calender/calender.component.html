@@ -1,8 +1,13 @@
 <div class="btn-box al-center flex-row">
-  <button [disabled]="days[0] === 1" (click)="updateWeek(true)" mat-fab color="accent">
+  <button [disabled]="days[0] === 1" (click)="updateWeek(true)" mat-fab color="primary">
     <mat-icon>arrow_back_ios</mat-icon>
   </button>
-  <div>Calender: week1</div>
+  <div class="flex-row d-flex">
+    <span *ngIf="!isResponsive">Calender: </span>
+    <span>
+    week {{week}}
+    </span>
+  </div>
   <button [disabled]="days[4] === 30" (click)="updateWeek(false)" mat-fab color="primary">
     <mat-icon>arrow_forward_ios</mat-icon>
   </button>
