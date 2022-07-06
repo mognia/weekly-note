@@ -1,14 +1,15 @@
 <div class="btn-box al-center flex-row">
-  <button [disabled]="days[0] === 1" (click)="updateWeek(true)" mat-fab color="primary">
+  <button [disabled]="days[0] === 1" data-testid="decrement-button" (click)="updateWeek(true)" mat-fab color="primary">
     <mat-icon>arrow_back_ios</mat-icon>
   </button>
   <div class="flex-row d-flex calender-title">
     <span *ngIf="!isResponsive">Calender: </span>
-    <span>
-    week {{week}}
+    <span class="flex-row">
+    week
+      <span data-testid="count">{{week}}</span>
     </span>
   </div>
-  <button [disabled]="days[4] === 30" (click)="updateWeek(false)" mat-fab color="primary">
+  <button [disabled]="days[4] === 30" (click)="updateWeek(false)" data-testid="increment-button" mat-fab color="primary">
     <mat-icon>arrow_forward_ios</mat-icon>
   </button>
 </div>
