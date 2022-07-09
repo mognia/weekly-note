@@ -5,7 +5,7 @@ import {BehaviorSubject} from "rxjs";
   providedIn: 'root'
 })
 export class CalenderService {
-  daysObservable = new BehaviorSubject<number[]>([])
+  daysObservable = new BehaviorSubject<number[]>([]);
   constructor() { }
   getDays() {
     return this.daysObservable.asObservable();
