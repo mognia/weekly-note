@@ -28,7 +28,8 @@ export class LabelsSectionComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.responsiveService.resizeObservable$.subscribe(data => {
-      this.isResponsive = data < 770;
+      this.isResponsive = (data <= 768);
+      console.log(this.isResponsive , 'labels')
       if (!this.isResponsive) {
         this.cols = 5
       }else {

@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { ApiService } from './api.service';
 import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
-import {backEndLabel, frontEndLabel, labels, securityLabel} from "../../helpers/spec-helpers/label.spec-helpers";
+import {labels} from "../../helpers/spec-helpers/label.spec-helpers";
 import {Label} from "../../models/label";
 import {Note} from "../../models/note";
 import {notesArray} from "../../helpers/spec-helpers/note.spec-helpers";

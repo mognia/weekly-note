@@ -23,11 +23,18 @@
     background: #ffffff;
   }
 }
-@media (max-width:961px)  {
+@media only screen and (max-width:768px)  {
   .mat-grid-list {
-    width: 4rem;
+    width: 5rem;
   }
   .container {
     padding: 0 ;
+  }
+
+}
+/*Tablet Query*/
+@media only screen and (min-width: 768px) and (max-width:1024px) {
+  .divider {
+    width: 11%;
   }
 }

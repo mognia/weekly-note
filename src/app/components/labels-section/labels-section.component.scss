@@ -37,7 +37,7 @@
 .tile-wrapper {
   width: 100%;
 }
-@media (max-width:961px)  {
+@media only screen and (max-width:768px)  {
   .label-holder {
     position: sticky;
     top: 6rem;

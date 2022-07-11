@@ -14,7 +14,8 @@ export class HeadComponent implements OnInit {
 
   ngOnInit(): void {
     this.responsiveService.resizeObservable$.subscribe(data => {
-      this.isResponsive = data < 770;
+      this.isResponsive = (data <= 768);
+      console.log(this.isResponsive , 'head')
     });
   }
 

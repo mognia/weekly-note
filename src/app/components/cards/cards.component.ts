@@ -19,7 +19,6 @@ export class CardsComponent implements OnInit {
     public apiService:ApiService) { }
 
   ngOnInit(): void {
-    console.log(this.note)
     this.calculateDuration()
   }
   calculateDuration(){

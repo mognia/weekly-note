@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from "./services/api/api.service";
-import {concatMap, switchMap} from "rxjs/operators";
 import {ResponsiveService} from "./services/responsive/responsive.service";
 import {SectionFilterService} from "./services/sectionFIlter/section-filter.service";
 

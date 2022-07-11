@@ -20,7 +20,7 @@ export class DaysSectionComponent implements OnInit {
   ngOnInit(): void {
     this.getDays()
     this.responsiveService.resizeObservable$.subscribe(data => {
-      this.isResponsive = data < 770;
+      this.isResponsive = (data <= 768);
       if (!this.isResponsive) {
         this.cols = 5
       }else {

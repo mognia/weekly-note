@@ -1,6 +1,7 @@
 <div class="container">
   <div class="days-holder">
   <div class="divider" *ngIf="!isResponsive"></div>
+    <div class="w-100">
 <mat-grid-list [cols]="cols" [rowHeight]="isResponsive ? '16rem' : '5rem'">
   <mat-grid-tile *ngFor="let day of days">
     <div class="tab-box">
@@ -9,5 +10,6 @@
     </div>
   </mat-grid-tile>
 </mat-grid-list>
+    </div>
   </div>
 </div>
