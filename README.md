@@ -1,27 +1,93 @@
-# WeeklyNote
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
+# Weekly Notes
 
-## Development server
+this is a sampel project that shows notes organized by categories on a timeline in a browser. (weekends don’t count. )
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+it uses a dummy api with some sampel data also it is a dummy save endpoint – no real saving/manipulation action .
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Screenshots
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![App Screenshot](https://i.ibb.co/ZfzKp1w/screenshot-localhost-4200-2022-07-12-17-36-50.png)
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## API Reference
 
-## Running end-to-end tests
+## API
+``` http
+https://61ee5f30d593d20017dbad98.mockapi.io/pinguin/api
+```
+#### Return a list of notes for three weeks
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```http
+  GET /notes
+```
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#### Return an array of available labels
+
+```http
+  GET /noteLabels
+```
+
+
+#### Payload is the note object itself. Return the updated note 
+
+```http
+  PUT /notes/{noteId}
+```
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://link-to-project
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Development server
+
+Navigate to http://localhost:4200/. The application will automatically reload if you change any of the source files.
+```bash
+  ng serve
+```
+## Tech Stack
+
+**Client:** Angular, Angular Material
+
+
+
+## Running Tests
+
+To execute the unit tests via Karma.
+
+```bash
+  ng test
+```
+
+
+## Features
+
+- Editable: Save a changed data at the right endpoint and replace updated data in the frontend data (it is a dummy save endpoint – no real saving/manipulation action!)
+
+-  Show label: display note labels inside the card
+
+
+## 🔗 Links
+[![gitHub](https://img.shields.io/github/followers/mognia?style=social)](https://github.com/mognia)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mohamad-ghafarnia/)
+
+
