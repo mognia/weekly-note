@@ -43,13 +43,13 @@ https://61ee5f30d593d20017dbad98.mockapi.io/pinguin/api
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/mognia/weekly-note.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd weekly-note
 ```
 
 Install dependencies
