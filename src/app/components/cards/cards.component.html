@@ -1,11 +1,11 @@
 <mat-card (click)="openDialog()" class="example-card">
   <mat-card-title>
     <div class="d-flex jus-between head">
-      <div>
+      <p class="title" [ngClass]="note?.id === 1 ? 'title-frontEnd' : note?.id === 2 ? 'title-backEnd' : 'title-security'">
         {{note?.id}}  {{note?.title}}
-      </div>
+      </p>
 
-      <div class="d-flex jus-around">
+      <div class="d-flex jus-around badges">
         <div class="chips" [ngClass]="id === 1 ? 'chips-frontEnd' : id === 2 ? 'chips-backEnd' : 'chips-security'"
              [matTooltip]="id === 1 ? 'Front End' : id === 2 ? 'Back End' : 'Security'"
              matTooltipPosition="above"
@@ -15,7 +15,7 @@
   </mat-card-title>
   <mat-card-content>
     <p>{{note?.summary}}</p>
-    <p>Duration: {{duration}} Days</p>
-    <p>start Date: {{note?.startDate}}</p>
+    <p class="duration">Duration: {{duration}} Days</p>
+    <p class="date">start Date: {{note?.startDate}}</p>
   </mat-card-content>
 </mat-card>
